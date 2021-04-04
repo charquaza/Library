@@ -10,9 +10,64 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js" defer></script>
         <script src="script.js" defer></script>
     </head>
     <body>
-        
+        <main>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Title</td>
+                        <td>Author</td>
+                        <td># of Pages</td>
+                        <td>Read?</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody class="library">
+                    <script id="book-template" type="text/x-handlebars-template">
+                        <tr>
+                            <td>
+                                <button class="remove-book">Remove</button>
+                            </td>
+                            <td>{{title}}</td>
+                            <td>{{author}}</td>
+                            <td>{{pages}}</td>
+                            <td>{{read}}</td>
+                            <td>
+                                <button class="change-read-status">Change Read Status</button>
+                            </td>
+                        </tr>
+                    </script>
+                </tbody>
+            </table>
+
+            <button class="add-book">Add a book</button>
+
+            <div class="add-book-form hide-form">
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title">
+
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author">
+
+                <label for="pages">Number of Pages:</label>
+                <input type="text" name="pages" id="pages">
+
+                <p>Have you read this book?</p>
+
+                <input type="radio" name="read" id="yes">
+                <label for="yes">Yes</label>
+
+                <input type="radio" name="read" id="no">
+                <label for="no">No</label>
+
+                <button class="add-to-lib">Add to library</button>
+            </div>
+
+        </main>
     </body>
 </html>
